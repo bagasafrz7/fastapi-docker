@@ -12,7 +12,15 @@ class Settings(BaseSettings):
     DB_USER: str = "postgres"
     DB_PASSWORD: str = "postgres"
     DB_HOST: str = "db"
-    DB_PORT: int = 5431
+    DB_PORT: int = 5432
+
+    SECRET_KEY: str = "not-very-safe-secrettt"
+    ALGORITHM: str = "HS256"
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
+
+    GOOGLE_CLIENT_ID: str = ""
+    GOOGLE_CLIENT_SECRET: str = ""
+    GOOGLE_REDIRECT_URI: str = "http://localhost:8000/auth/google/callback"
 
     @property
     def DB_CONNECTION_STR(self) -> str:
